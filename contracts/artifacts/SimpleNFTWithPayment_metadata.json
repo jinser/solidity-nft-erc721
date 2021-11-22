@@ -16,6 +16,11 @@
 						"internalType": "string",
 						"name": "symbol",
 						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "paymentToken",
+						"type": "address"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -194,6 +199,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getMinimumPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "owner",
 						"type": "address"
@@ -245,6 +269,30 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "paymentAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "purchaseNftToken",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -313,6 +361,30 @@
 				],
 				"name": "setApprovalForAll",
 				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "paymentAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "setMinimumPrice",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -507,12 +579,13 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {},
+			"notice": "This is an ERC-721 NFT example that provides a simple way for payment of NFTs.  Payment is conducted via an ERC-20 Token while ownership of the NFT changes hands.",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/SimpleNFT.sol": "SimpleNFT"
+			"contracts/SimpleNFTWithPayment.sol": "SimpleNFTWithPayment"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -630,12 +703,12 @@
 				"dweb:/ipfs/QmUMzkyH3ytJX5gVPizQruNLhkKmuJb3nFqBDad4LPdg5U"
 			]
 		},
-		"contracts/SimpleNFT.sol": {
-			"keccak256": "0x9b2486c7963d2e484b449b1505f14b590db1b4e0dafc0bb273226bfcede453a9",
+		"contracts/SimpleNFTWithPayment.sol": {
+			"keccak256": "0xd992d4353a51811e8117da6b17cbadab85c1a1471ddeddf9a7b02112106e084a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6c688971cc2a3bee2853a1f648d6ca76272054b53e86724b0f3499f4eb9460d2",
-				"dweb:/ipfs/QmXpTPMmoCTREvGHZvocRbKQnya4XaQuUeVanerZGUaUGX"
+				"bzz-raw://b4f5324e004797ce8933e0e61add7e8e4eb98b19f65438f1dfe0c637040914d8",
+				"dweb:/ipfs/QmY4fd9NbB9heWiHV7k5BPZcxg8XxiKbw4L1VMDAuJWvqL"
 			]
 		}
 	},

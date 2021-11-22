@@ -6,7 +6,7 @@ import "@openzeppelin/contracts@3.4.0/token/ERC721/ERC721.sol";
 
 contract SimpleNFT is ERC721 {
     
-    //counts total number of NFTs created
+    //simple method for creating unique identifiers for NFTs which also acts to track the total number of NFTs created as well
     uint256 public counter;
     
     //constructor class to include ERC721 

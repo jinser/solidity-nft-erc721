@@ -16,6 +16,11 @@
 						"internalType": "string",
 						"name": "symbol",
 						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "paymentToken",
+						"type": "address"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -194,6 +199,56 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getInterestedBuyers",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "buyer",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "offerPrice",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct SimpleNFTWithPaymentAndAuction.BuyOffer[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getMinimumPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "owner",
 						"type": "address"
@@ -245,6 +300,49 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "purchaseNftToken",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "offerPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "registerInterest",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -313,6 +411,30 @@
 				],
 				"name": "setApprovalForAll",
 				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "paymentAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "setMinimumPrice",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -512,7 +634,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/SimpleNFT.sol": "SimpleNFT"
+			"contracts/SimpleNFTWithPaymentAndAuction.sol": "SimpleNFTWithPaymentAndAuction"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -630,12 +752,12 @@
 				"dweb:/ipfs/QmUMzkyH3ytJX5gVPizQruNLhkKmuJb3nFqBDad4LPdg5U"
 			]
 		},
-		"contracts/SimpleNFT.sol": {
-			"keccak256": "0x9b2486c7963d2e484b449b1505f14b590db1b4e0dafc0bb273226bfcede453a9",
+		"contracts/SimpleNFTWithPaymentAndAuction.sol": {
+			"keccak256": "0x05f345e7e13e932f5c0e26c1b31654af0354e014761961e460b616d29b71eefc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6c688971cc2a3bee2853a1f648d6ca76272054b53e86724b0f3499f4eb9460d2",
-				"dweb:/ipfs/QmXpTPMmoCTREvGHZvocRbKQnya4XaQuUeVanerZGUaUGX"
+				"bzz-raw://6d1980e7ae9997fa2e63952087ad2c7d0e079433706643016b7df3dfe213df24",
+				"dweb:/ipfs/QmRdtVEwZoQ1S8akNWXeyhRDSfA6K8xsGoGrSq4sMfvFh8"
 			]
 		}
 	},
